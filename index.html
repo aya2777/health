@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>健康記録アプリ</title>
+    <link rel="stylesheet" href="a.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <script src="a.js"></script>
+
+<div id="home">
+    <h1>健康記録アプリ</h1>
+    <button id="weightBtn">体重</button>
+    <button id="diaryBtn">日記</button>
+    <button id="mealBtn">食事</button>
+    <button id="todoBtn">TODO</button>
+    <button id="sleepBtn">睡眠</button>
+    <button id="stepsBtn">歩数</button>
+    <div id="calendar"></div>
+    <div id="dayData"></div>
+</div>
+
+<div id="recordPage" style="display:none;">
+    <h1>体重記録アプリ</h1>
+    <button class="backBtn">戻る</button>
+    <button id="homeBtn">ホーム</button>
+    <form id="recordForm">
+        <label for="weight">体重 (kg):</label>
+        <input type="number" id="weight" step="0.1" required>
+
+        <button type="submit">記録</button>
+    </form>
+
+    <div id="records">
+        <h2>過去の記録</h2>
+    </div>
+
+    <h2>グラフ</h2>
+    <canvas id="myChart"></canvas>
+</div>
+
+<div id="diaryPage" style="display:none;">
+    <h1>日記</h1>
+    <button class="backBtn">戻る</button>
+    <button class="homeBtn">ホーム</button>
+    <form id="diaryForm">
+        <textarea id="diaryText" placeholder="今日の日記を書いてください" rows="5"></textarea>
+        <button type="submit">保存</button>
+    </form>
+    <div id="diaryEntries"></div>
+</div>
+
+<div id="mealPage" style="display:none;">
+    <h1>食事記録</h1>
+    <button class="backBtn">戻る</button>
+    <button class="homeBtn">ホーム</button>
+    <form id="mealForm">
+        <input type="text" id="mealName" placeholder="食事内容" required>
+        <button type="submit">記録</button>
+    </form>
+    <div id="mealRecords"></div>
+</div>
+
+<div id="todoPage" style="display:none;">
+    <h1>TODOリスト</h1>
+    <button class="backBtn">戻る</button>
+    <button class="homeBtn">ホーム</button>
+    <form id="todoForm">
+        <input type="text" id="todoTask" placeholder="タスクを追加" required>
+        <button type="submit">追加</button>
+    </form>
+    <ul id="todoList"></ul>
+</div>
+
+<div id="sleepPage" style="display:none;">
+    <h1>睡眠記録</h1>
+    <button class="backBtn">戻る</button>
+    <button class="homeBtn">ホーム</button>
+    <button id="wakeBtn">起床記録</button>
+    <div id="wakeForm" style="display:none;">
+        <input type="time" id="wakeTimeInput">
+        <button id="recordWakeBtn">記録</button>
+    </div>
+    <button id="bedBtn">就寝記録</button>
+    <div id="bedForm" style="display:none;">
+        <input type="time" id="bedTimeInput">
+        <button id="recordBedBtn">記録</button>
+    </div>
+    <div id="sleepRecords"></div>
+    <h2>睡眠時間グラフ</h2>
+    <canvas id="sleepChart"></canvas>
+</div>
+
+<div id="stepsPage" style="display:none;">
+    <h1>歩数記録</h1>
+    <button class="backBtn">戻る</button>
+    <button class="homeBtn">ホーム</button>
+    <form id="stepsForm">
+        <label for="dailySteps">今日の歩数を入力:</label>
+        <input type="number" id="dailySteps" min="0" required>
+        <button type="submit">記録</button>
+    </form>
+    <div id="stepsRecords"></div>
+
+    <h2>歩数ゲーム</h2>
+    <p>記録した歩数でキャラクターが自動的に進みます。</p>
+    <button id="resetGameBtn">ゲームリセット</button>
+    <div id="gameMap"></div>
+    <div id="gameStatus"></div>
+</div>
+
+</body>
+</html>
